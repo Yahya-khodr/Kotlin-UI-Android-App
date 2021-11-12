@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/ivCategory"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:scaleType="centerCrop"
@@ -20,6 +21,7 @@
         </ImageView>
 
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Development"
@@ -30,6 +32,7 @@
             android:textColor="#575b65">
         </TextView>
         <TextView
+            android:id="@+id/tvCourseNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="165 courses"

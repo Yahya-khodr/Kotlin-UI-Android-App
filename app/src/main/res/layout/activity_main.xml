@@ -223,7 +223,10 @@
                     android:id="@+id/rvRcd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="@id/tvRcd"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent
+"
                     app:layout_constraintTop_toBottomOf="@+id/tvRcd"
                     tools:listitem="@layout/recommended_card" />
 
@@ -238,6 +241,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/tvRcd"  />
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
 
         </LinearLayout>
     </ScrollView>
