@@ -4,21 +4,25 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.TransformationUtils.centerCrop
 import com.example.kotlin_ui_android_app.databinding.CategoryCardBinding
 import com.example.kotlin_ui_android_app.model.Category
 
 
-class CategoryAdapter(val categoryList: List<Category>) :
+class CategoryAdapter(private val categoryList: List<Category>) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
 
-    inner class CategoryViewHolder( val binding: CategoryCardBinding) :
+    inner class CategoryViewHolder(private val binding: CategoryCardBinding) :
         RecyclerView.ViewHolder(binding.root){
             fun bind(model: Category){
                 binding.tvCourseNum.text= model.course_number
                 binding.tvTitle.text= model.title
                 Glide.with(binding.root)
+
                     .load(model.imageUrl)
+                    .centerCrop()
+                    .override(300,200)
                     .into(binding.ivCategory)
             }
         }

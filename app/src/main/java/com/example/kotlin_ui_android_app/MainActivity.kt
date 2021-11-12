@@ -3,8 +3,10 @@ package com.example.kotlin_ui_android_app
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlin_ui_android_app.adapter.CategoryAdapter
+import com.example.kotlin_ui_android_app.adapter.CourseAdapter
 import com.example.kotlin_ui_android_app.databinding.ActivityMainBinding
 import com.example.kotlin_ui_android_app.model.Category
+import com.example.kotlin_ui_android_app.model.Course
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,49 +14,87 @@ class MainActivity : AppCompatActivity() {
     private val binding get() = _binding
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var categoryList: List<Category>
+    private lateinit var courseAdapter: CourseAdapter
+    private lateinit var courseList: List<Course>
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         _binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        setContentView(binding?.root)
 
         loadCategory()
+        loadCourse()
         categoryAdapter = CategoryAdapter(categoryList)
+        courseAdapter = CourseAdapter(courseList)
+        binding?.rvRcd?.adapter = courseAdapter
         binding?.rvCat?.adapter = categoryAdapter
+
 
     }
 
-    private fun loadCategory(){
+    private fun loadCategory() {
         categoryList = listOf(
             Category(
                 "Development",
                 "165 courses",
-                "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                R.drawable.development_image
             ),
             Category(
                 "Development",
                 "165 courses",
-                "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                R.drawable.development_image
             ),
             Category(
                 "Development",
                 "165 courses",
-                "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                R.drawable.development_image
             ),
             Category(
                 "Development",
                 "165 courses",
-                "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                R.drawable.development_image
             ),
             Category(
                 "Development",
                 "165 courses",
-                "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                R.drawable.development_image
             )
         )
     }
+
+    private fun loadCourse() {
+        courseList = listOf(
+            Course(
+                "IELTS Preparation",
+                "Teaching & Academics",
+                "4.9",
+                "86 hours"
+            ),
+            Course(
+                "IELTS Preparation",
+                "Teaching & Academics",
+                "4.9",
+                "86 hours"
+            ),
+            Course(
+                "IELTS Preparation",
+                "Teaching & Academics",
+                "4.9",
+                "86 hours"
+            ),
+            Course(
+                "IELTS Preparation",
+                "Teaching & Academics",
+                "4.9",
+                "86 hours"
+            ),
+        )
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
+
 }

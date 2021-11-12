@@ -2,7 +2,7 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="360dp"
+    android:layout_width="340dp"
     android:layout_height="150dp"
     android:layout_margin="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -41,6 +41,14 @@
             tools:layout_editor_absoluteY="-14dp">
 
         </ImageView>
+        <View android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadow_bg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
             android:id="@+id/ivSmallDarkCircle"
@@ -85,7 +93,7 @@
 
 
         <TextView
-            android:id="@+id/tv1"
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -101,15 +109,15 @@
 
 
         <TextView
-            android:id="@+id/tv2"
+            android:id="@+id/tvType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:text="Teaching &amp; Academics"
             android:textColor="#1D7FC5"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/tv1"
-            app:layout_constraintTop_toBottomOf="@+id/tv1"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
             app:layout_constraintVertical_bias="0.0">
 
         </TextView>
@@ -119,8 +127,8 @@
             android:layout_width="90dp"
             android:layout_height="20dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintStart_toStartOf="@id/tv2"
-            app:layout_constraintTop_toBottomOf="@+id/tv2"
+            app:layout_constraintStart_toStartOf="@id/tvType"
+            app:layout_constraintTop_toBottomOf="@+id/tvType"
             android:src="@drawable/rating_orange_big">
         </ImageView>
 
@@ -139,6 +147,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tvDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
