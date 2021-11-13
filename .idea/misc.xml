@@ -11,7 +11,10 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/darkCircle.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/dark_circle.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/gradient_bg.xml" value="0.15677083333333333" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/ic_baseline_access_time_filled_24.xml" value="0.19722222222222222" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.20462962962962963" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.19722222222222222" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/ic_close.xml" value="0.20462962962962963" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/drawable/main_bg.xml" value="0.20462962962962963" />
@@ -21,7 +24,8 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/activity_category.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/activity_category_detail_activitiy.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/card_item.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/activity_test.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/card_item.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/card_recommended.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/category_card.xml" value="0.2265625" />
         <entry key="..\:/Users/User/AndroidStudioProjects/KotlinUIAndroidApp/app/src/main/res/layout/filter_card.xml" value="0.4" />

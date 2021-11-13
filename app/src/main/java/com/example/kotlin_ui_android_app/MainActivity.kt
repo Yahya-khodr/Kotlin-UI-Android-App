@@ -1,7 +1,9 @@
 package com.example.kotlin_ui_android_app
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_ui_android_app.adapter.CategoryAdapter
 import com.example.kotlin_ui_android_app.adapter.CourseAdapter
 import com.example.kotlin_ui_android_app.databinding.ActivityMainBinding
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var courseList: List<Course>
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
@@ -29,9 +32,8 @@ class MainActivity : AppCompatActivity() {
         courseAdapter = CourseAdapter(courseList)
         binding?.rvRcd?.adapter = courseAdapter
         binding?.rvCat?.adapter = categoryAdapter
-
-
     }
+
 
     private fun loadCategory() {
         categoryList = listOf(

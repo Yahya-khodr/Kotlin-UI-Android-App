@@ -1,31 +1,47 @@
 package com.example.kotlin_ui_android_app.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.persistableBundleOf
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.TransformationUtils.centerCrop
+import com.example.kotlin_ui_android_app.CategoryActivity
+import com.example.kotlin_ui_android_app.MainActivity
+import com.example.kotlin_ui_android_app.TestActivity
 import com.example.kotlin_ui_android_app.databinding.CategoryCardBinding
 import com.example.kotlin_ui_android_app.model.Category
 
 
-class CategoryAdapter(private val categoryList: List<Category>) :
+class CategoryAdapter(
+    private val categoryList: List<Category>,
+) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
 
-    inner class CategoryViewHolder(private val binding: CategoryCardBinding) :
-        RecyclerView.ViewHolder(binding.root){
-            fun bind(model: Category){
-                binding.tvCourseNum.text= model.course_number
-                binding.tvTitle.text= model.title
-                Glide.with(binding.root)
+    inner class CategoryViewHolder(
+        private val binding: CategoryCardBinding,
 
-                    .load(model.imageUrl)
-                    .centerCrop()
-                    .override(300,200)
-                    .into(binding.ivCategory)
+
+        ) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(model: Category) {
+            binding.tvCourseNum.text = model.course_number
+            binding.tvTitle.text = model.title
+            binding.root.setOnClickListener {
+                val intent = Intent(binding.root.context,TestActivity::class.java)
+                binding.root.context.startActivity(intent)
             }
+
+
+            Glide.with(binding.root)
+
+                .load(model.imageUrl)
+                .centerCrop()
+                .override(300, 200)
+                .into(binding.ivCategory)
         }
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
@@ -35,11 +51,17 @@ class CategoryAdapter(private val categoryList: List<Category>) :
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-    holder.bind(categoryList[position])
+        holder.bind(categoryList[position])
+
+
     }
 
     override fun getItemCount(): Int =
         categoryList.size
 
 }
+
+
+
+
 
