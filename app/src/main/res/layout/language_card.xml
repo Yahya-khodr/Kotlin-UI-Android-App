@@ -7,16 +7,15 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="20dp">
     <TextView
+        android:id="@+id/tvLang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="#424649"
         android:text="JavaScript"
         android:gravity="center_vertical"
-
         android:drawablePadding="3dp"
-
         android:textSize="18sp"
-        app:drawableTint="@color/black"
+        app:drawableTint="#424649"
         app:drawableStartCompat="@drawable/ic_close">
 
     </TextView>

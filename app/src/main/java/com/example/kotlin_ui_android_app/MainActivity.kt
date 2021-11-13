@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         courseAdapter = CourseAdapter(courseList)
         binding?.rvRcd?.adapter = courseAdapter
         binding?.rvCat?.adapter = categoryAdapter
+
     }
 
 
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 R.drawable.development_image
             ),
             Category(
-                "Development",
+                "Design",
                 "165 courses",
                 R.drawable.development_image
             ),

@@ -29,6 +29,7 @@ class CourseAdapter(private val courseList: List<Course>) :
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
        holder.bind(courseList[position])
+
     }
 
     override fun getItemCount(): Int {

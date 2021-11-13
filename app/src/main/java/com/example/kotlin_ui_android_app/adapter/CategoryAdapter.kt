@@ -29,7 +29,7 @@ class CategoryAdapter(
             binding.tvCourseNum.text = model.course_number
             binding.tvTitle.text = model.title
             binding.root.setOnClickListener {
-                val intent = Intent(binding.root.context,TestActivity::class.java)
+                val intent = Intent(binding.root.context,CategoryActivity::class.java)
                 binding.root.context.startActivity(intent)
             }
 
