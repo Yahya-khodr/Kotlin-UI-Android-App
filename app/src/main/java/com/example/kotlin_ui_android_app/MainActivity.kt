@@ -1,9 +1,12 @@
 package com.example.kotlin_ui_android_app
 
-import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SnapHelper
 import com.example.kotlin_ui_android_app.adapter.CategoryAdapter
 import com.example.kotlin_ui_android_app.adapter.CourseAdapter
 import com.example.kotlin_ui_android_app.databinding.ActivityMainBinding
@@ -18,12 +21,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var categoryList: List<Category>
     private lateinit var courseAdapter: CourseAdapter
     private lateinit var courseList: List<Course>
-
+    private lateinit var recyclerView: RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding?.root)
 
         loadCategory()
@@ -101,3 +105,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+

@@ -1,9 +1,15 @@
 package com.example.kotlin_ui_android_app
 
 import android.os.Bundle
+import android.view.View
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SnapHelper
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.kotlin_ui_android_app.R.anim.slide_out_up
 import com.example.kotlin_ui_android_app.adapter.CardItemAdapter
 import com.example.kotlin_ui_android_app.adapter.LangAdapter
 import com.example.kotlin_ui_android_app.databinding.ActivityCategoryBinding
@@ -20,11 +26,13 @@ class CategoryActivity : AppCompatActivity() {
     private lateinit var cardList: List<CardItem>
     private lateinit var langAdapter: LangAdapter
     private lateinit var langList: List<Language>
-    override fun onCreate(savedInstanceState: Bundle?) {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityCategoryBinding.inflate(layoutInflater)
+
         setContentView(binding?.root)
+
         loadItem()
         loadLang()
         loadImage()
@@ -33,6 +41,7 @@ class CategoryActivity : AppCompatActivity() {
         langAdapter = LangAdapter(langList)
         binding?.rvCard?.adapter = cardItemAdapter
         binding?.rvLang?.adapter = langAdapter
+
 
     }
 

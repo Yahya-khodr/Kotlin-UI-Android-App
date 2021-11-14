@@ -31,7 +31,9 @@ class CategoryAdapter(
             binding.root.setOnClickListener {
                 val intent = Intent(binding.root.context,CategoryActivity::class.java)
                 binding.root.context.startActivity(intent)
+                
             }
+
 
 
             Glide.with(binding.root)

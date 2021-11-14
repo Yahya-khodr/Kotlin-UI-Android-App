@@ -102,6 +102,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/tvWlc"
                     app:layout_constraintVertical_bias="0.0" />
 
+
                 <ImageView
                     android:id="@+id/ivMediumCircle"
                     android:layout_width="80dp"
@@ -113,18 +114,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/etSearch" />
 
-
                 <ImageView
                     android:id="@+id/ivSmallCircle"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="4dp"
                     android:src="@drawable/circle"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.722"
+                    app:layout_constraintHorizontal_bias="0.825"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
 
                 <EditText
                     android:id="@+id/etSearch"

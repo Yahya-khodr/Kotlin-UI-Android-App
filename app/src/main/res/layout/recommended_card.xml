@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="340dp"
+    android:layout_width="320dp"
     android:layout_height="150dp"
     android:layout_margin="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="25dp"
     tools:ignore="ContentDescription"
 
     >
 
 
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
         android:background="@drawable/gradient_bg"
-        >
+        android:orientation="horizontal">
 
     </LinearLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
 
         <ImageView
@@ -41,24 +38,26 @@
             tools:layout_editor_absoluteY="-14dp">
 
         </ImageView>
-        <View android:id="@+id/view"
+
+        <View
+            android:id="@+id/view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shadow_bg"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ivSmallDarkCircle"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/dark_circle"
             android:layout_marginStart="30dp"
+            android:src="@drawable/dark_circle"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteX="140dp">
 
         </ImageView>
@@ -80,7 +79,7 @@
             android:id="@+id/ivBorderCircle"
             android:layout_width="80dp"
             android:layout_height="80dp"
-    android:layout_marginTop="40dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
             android:src="@drawable/border_circle"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -88,8 +87,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
         </ImageView>
-
-
 
 
         <TextView
@@ -105,7 +102,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
-
 
 
         <TextView
@@ -127,22 +123,23 @@
             android:layout_width="90dp"
             android:layout_height="20dp"
             android:layout_marginTop="18dp"
+            android:src="@drawable/rating_orange_big"
             app:layout_constraintStart_toStartOf="@id/tvType"
             app:layout_constraintTop_toBottomOf="@+id/tvType"
-            android:src="@drawable/rating_orange_big">
+            app:tint="#ee6b4d">
+
         </ImageView>
 
         <TextView
             android:id="@+id/tvRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
             android:text="4.9"
-           android:layout_marginStart="7dp"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/ivRate"
             app:layout_constraintStart_toEndOf="@+id/ivRate"
-            app:layout_constraintTop_toTopOf="@+id/ivRate"
-            >
+            app:layout_constraintTop_toTopOf="@+id/ivRate">
 
         </TextView>
 
@@ -150,24 +147,17 @@
             android:id="@+id/tvDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:text="86 hours"
             android:layout_marginEnd="20dp"
+            android:text="86 hours"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/tvRate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvRate"
-            >
+            app:layout_constraintTop_toTopOf="@+id/tvRate">
 
         </TextView>
 
 
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
 </androidx.cardview.widget.CardView>
