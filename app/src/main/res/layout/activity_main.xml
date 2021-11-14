@@ -24,6 +24,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layoutAnimation="@anim/layout_activity_animation"
                 android:layout_height="match_parent">
 
                 <ImageView
@@ -63,6 +64,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layoutAnimation="@anim/layout_activity_animation"
                 android:layout_height="wrap_content">
 
 
@@ -170,6 +172,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layoutAnimation="@anim/main_layout_animation"
                 android:layout_height="wrap_content">
 
                 <TextView

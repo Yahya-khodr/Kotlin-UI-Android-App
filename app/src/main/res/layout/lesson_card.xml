@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:backgroundTint="#16222e"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp"
+    app:contentPadding="10dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivCardCircle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/border_dark_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+           >
+
+
+        </ImageView>
+
+        <ImageButton
+            android:id="@+id/ibPlay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_baseline_play_arrow_24"
+            app:layout_constraintBottom_toBottomOf="@id/ivCardCircle"
+            app:layout_constraintEnd_toEndOf="@id/ivCardCircle"
+            app:layout_constraintStart_toStartOf="@id/ivCardCircle"
+            app:layout_constraintTop_toTopOf="@id/ivCardCircle" />
+
+        <TextView
+            android:id="@+id/tvLessonTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Getting Started"
+            android:textSize="16sp"
+            android:textColor="#eaf0f1"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintStart_toEndOf="@id/ivCardCircle"
+            app:layout_constraintTop_toTopOf="@id/ivCardCircle"
+            app:layout_constraintBottom_toBottomOf="@id/ivCardCircle"/>
+        <TextView
+            android:id="@+id/tvLessonNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="13 lectures"
+            android:textColor="#cc9080"
+            app:layout_constraintStart_toStartOf="@id/tvLessonTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvLessonTitle"/>
+        
+        <TextView
+            android:id="@+id/tvLessonTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="1hr 42 min"
+            android:textColor="#4d96c2"
+            app:layout_constraintTop_toTopOf="@id/ivCardCircle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/ivCardCircle"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
+

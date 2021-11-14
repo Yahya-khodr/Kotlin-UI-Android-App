@@ -8,4 +8,9 @@
     <translate android:fromXDelta="-100%"
         android:toXDelta="0%"
         android:duration ="1000"/>
+    <rotate android:fromDegrees="-10"
+        android:toDegrees="0"
+        android:pivotX="0%"
+        android:pivotY="100%"
+        android:duration ="1000"/>
 </set>
