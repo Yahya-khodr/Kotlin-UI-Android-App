@@ -15,9 +15,6 @@
             android:name=".CourseActivity"
             android:exported="false" />
         <activity
-            android:name=".TestActivity"
-            android:exported="false" />
-        <activity
             android:name=".CategoryActivity"
             android:exported="false"
              />
