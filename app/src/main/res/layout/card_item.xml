@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp"
+    app:contentPadding="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvCardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Angular - The Complete Guide"
+            android:textSize="16sp"
+            android:textColor="#2a2f35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvLecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="42 lectures"
+            android:textColor="#cc9080"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/tvCardTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvCardTitle">
+
+        </TextView>
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="2dp"
+                android:gravity="center_horizontal"
+                android:text="86 hr"
+                android:textSize="15sp"
+                android:textColor="#9cadcb"
+                app:drawableStartCompat="@drawable/ic_baseline_access_time_filled_24"
+                app:layout_constraintStart_toStartOf="@id/tvLecture"
+                app:layout_constraintTop_toBottomOf="@id/tvLecture"
+                app:drawableTint="#9cadcb">
+
+            </TextView>
+
+        <TextView
+            android:id="@+id/tvStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="2dp"
+            android:layout_marginStart="30dp"
+            android:gravity="center_horizontal"
+            android:text="4.9"
+            android:textColor="#9cadcb"
+            android:textSize="15sp"
+            app:drawableStartCompat="@drawable/ic_baseline_star_24"
+            app:drawableTint="#9cadcb"
+            app:layout_constraintBottom_toBottomOf="@id/tvTime"
+            app:layout_constraintStart_toEndOf="@+id/tvTime"
+            app:layout_constraintTop_toTopOf="@id/tvTime"
+            app:layout_constraintVertical_bias="0.0">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="2dp"
+            android:layout_marginStart="30dp"
+            android:gravity="center_horizontal"
+            android:text="22,300"
+            android:textColor="#9cadcb"
+            android:textSize="15sp"
+            app:drawableStartCompat="@drawable/ic_baseline_people_24"
+            app:drawableTint="#9cadcb"
+            app:layout_constraintBottom_toBottomOf="@id/tvTime"
+            app:layout_constraintStart_toEndOf="@+id/tvStar"
+            app:layout_constraintTop_toTopOf="@id/tvTime"
+            app:layout_constraintVertical_bias="0.0">
+
+        </TextView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

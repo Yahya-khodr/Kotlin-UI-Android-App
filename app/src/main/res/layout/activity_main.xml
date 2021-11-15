@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F7FF"
-    tools:context=".MainActivity">
+    android:background="@drawable/background_main"
+    tools:context=".MainActivity"
+    tools:ignore="ContentDescription">
 
 
     <ScrollView
@@ -17,10 +18,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layoutAnimation="@anim/layout_activity_animation"
                 android:layout_height="match_parent">
 
                 <ImageView
@@ -33,16 +37,25 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/grid_outline" />
 
-                <ImageView
-                    android:id="@+id/ivUser"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_marginEnd="24dp"
+                    app:cardCornerRadius="7dp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivGrid"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/ivGrid"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/user_photo" />
+                    app:layout_constraintTop_toTopOf="@+id/ivGrid">
+
+                    <ImageView
+                        android:id="@+id/ivUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        app:cardCornerRadius="15dp"
+                        app:srcCompat="@drawable/user_photo" />
+
+                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Space
@@ -51,6 +64,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layoutAnimation="@anim/layout_activity_animation"
                 android:layout_height="wrap_content">
 
 
@@ -58,11 +72,10 @@
                     android:id="@+id/ivLargeCircle"
                     android:layout_width="205dp"
                     android:layout_height="234dp"
-
+                    android:layout_marginStart="24dp"
                     android:src="@drawable/circle"
-                    tools:layout_editor_absoluteX="14dp"
-                    tools:layout_editor_absoluteY="-3dp" />
-
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvWlc"
@@ -82,15 +95,15 @@
                     android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
                     android:text="Yahya"
                     android:textColor="@color/black"
                     android:textSize="30sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/ivLargeCircle"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvWlc"
                     app:layout_constraintTop_toBottomOf="@+id/tvWlc"
                     app:layout_constraintVertical_bias="0.0" />
+
 
                 <ImageView
                     android:id="@+id/ivMediumCircle"
@@ -103,40 +116,63 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/etSearch" />
 
-                <EditText
-                    android:id="@+id/etSearch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="40dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/search_edit_bg"
-                    android:drawablePadding="8dp"
-                    android:hint="Search Courses"
-                    android:inputType="textPersonName"
-                    android:padding="20dp"
-                    android:textColorHint="#ccd7e4"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.687"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvName" />
-
                 <ImageView
                     android:id="@+id/ivSmallCircle"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:layout_marginTop="4dp"
                     android:src="@drawable/circle"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.722"
+                    app:layout_constraintHorizontal_bias="0.825"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="3dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <EditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/search_edit_bg"
+                    android:hint="Search Courses"
+                    android:inputType="textPersonName"
+                    android:padding="15dp"
+                    android:textColorHint="#ccd7e4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="@color/black"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/etSearch"
+                    app:layout_constraintEnd_toEndOf="@+id/etSearch"
+                    app:layout_constraintTop_toTopOf="@+id/etSearch">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="27dp"
+                        android:layout_margin="12dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/outlined_filter"
+                        app:tint="#FFFFFF">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layoutAnimation="@anim/main_layout_animation"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -150,14 +186,21 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/categoryRecycler"
-                    android:layout_width="0dp"
+                    android:id="@+id/rvCat"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCat" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvCat"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:listitem="@layout/category_card" />
 
                 <TextView
                     android:id="@+id/tvAll"
@@ -168,10 +211,52 @@
                     android:textColor="#448AFF"
                     app:layout_constraintBottom_toBottomOf="@+id/tvCat"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tvCat"  />
+                    app:layout_constraintTop_toTopOf="@+id/tvCat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvRcd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="Recommended"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRcd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent
+"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRcd"
+                    tools:listitem="@layout/recommended_card" />
+
+                <TextView
+                    android:id="@+id/tvRecAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:text="View All"
+                    android:textColor="#448AFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvRcd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvRcd" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
         </LinearLayout>
     </ScrollView>
