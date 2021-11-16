@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.SnapHelper
 import com.example.kotlin_ui_android_app.adapter.CategoryAdapter
 import com.example.kotlin_ui_android_app.adapter.CourseAdapter
-import com.example.kotlin_ui_android_app.adapter.ItemModelAdapter
+import com.example.kotlin_ui_android_app.adapter.ItemRecyclerAdapter
 import com.example.kotlin_ui_android_app.databinding.ActivityMainBinding
 import com.example.kotlin_ui_android_app.model.Category
 import com.example.kotlin_ui_android_app.model.Course
@@ -19,27 +17,47 @@ class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding
-    private lateinit var categoryAdapter: ItemModelAdapter
+    private lateinit var categoryList: List<Category>
     private lateinit var itemList: List<ItemModel>
-    private lateinit var courseAdapter: ItemModelAdapter
-
-
+    private lateinit var categoryAdapter: CategoryAdapter
+    private lateinit var courseAdapter: CourseAdapter
+    private lateinit var courseList: List<Course>
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding?.root)
+        setAdapter()
 
-        loadCategory()
-        loadCourse()
-        categoryAdapter = ItemModelAdapter(itemList)
-        courseAdapter = ItemModelAdapter(itemList)
-
-        binding?.layoutCategory?.rvItem?.adapter = categoryAdapter
-        binding?.layoutRecommended?.rvItem?.adapter =courseAdapter
 
     }
+
+
+
+    private fun setAdapter() {
+        loadCourse()
+        loadCategory()
+        initAdapter()
+    }
+
+    private fun initAdapter() {
+        categoryAdapter = CategoryAdapter(categoryList)
+        binding?.layoutCategory?.rvItem?.adapter = categoryAdapter
+        binding?.layoutCategory?.tvItemTitle?.text = resources.getString(R.string.categories)
+        courseAdapter = CourseAdapter( courseList)
+        binding?.layoutRecommended?.rvItem?.adapter = courseAdapter
+        binding?.layoutRecommended?.tvItemTitle?.text = resources.getString(R.string.recommended)
+
+
+    }
+
+//    private fun loadItem() {
+//        itemList = listOf(
+//            ItemModel("Category"), ItemModel("Recommended")
+//
+//        )
+//    }
 
 
     private fun loadCategory() {

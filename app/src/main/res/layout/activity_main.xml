@@ -169,10 +169,18 @@
 
 
             <include layout="@layout/layout_recycler"
-                android:id="@+id/layout_category"/>
+                android:id="@+id/layoutCategory"/>
 
             <include layout="@layout/layout_recycler"
-                android:id="@+id/layout_recommended"/>
+                android:id="@+id/layoutRecommended"/>
+
+
+
+
+
+
+
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
