@@ -9,19 +9,20 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.example.kotlin_ui_android_app.adapter.CategoryAdapter
 import com.example.kotlin_ui_android_app.adapter.CourseAdapter
+import com.example.kotlin_ui_android_app.adapter.ItemModelAdapter
 import com.example.kotlin_ui_android_app.databinding.ActivityMainBinding
 import com.example.kotlin_ui_android_app.model.Category
 import com.example.kotlin_ui_android_app.model.Course
+import com.example.kotlin_ui_android_app.model.ItemModel
 
 class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding
-    private lateinit var categoryAdapter: CategoryAdapter
-    private lateinit var categoryList: List<Category>
-    private lateinit var courseAdapter: CourseAdapter
-    private lateinit var courseList: List<Course>
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var categoryAdapter: ItemModelAdapter
+    private lateinit var itemList: List<ItemModel>
+    private lateinit var courseAdapter: ItemModelAdapter
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,10 +33,11 @@ class MainActivity : AppCompatActivity() {
 
         loadCategory()
         loadCourse()
-        categoryAdapter = CategoryAdapter(categoryList)
-        courseAdapter = CourseAdapter(courseList)
-        binding?.rvRcd?.adapter = courseAdapter
-        binding?.rvCat?.adapter = categoryAdapter
+        categoryAdapter = ItemModelAdapter(itemList)
+        courseAdapter = ItemModelAdapter(itemList)
+
+        binding?.layoutCategory?.rvItem?.adapter = categoryAdapter
+        binding?.layoutRecommended?.rvItem?.adapter =courseAdapter
 
     }
 

@@ -24,7 +24,6 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layoutAnimation="@anim/layout_activity_animation"
                 android:layout_height="match_parent">
 
                 <ImageView
@@ -64,7 +63,6 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layoutAnimation="@anim/layout_activity_animation"
                 android:layout_height="wrap_content">
 
 
@@ -170,90 +168,11 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layoutAnimation="@anim/main_layout_animation"
-                android:layout_height="wrap_content">
+            <include layout="@layout/layout_recycler"
+                android:id="@+id/layout_category"/>
 
-                <TextView
-                    android:id="@+id/tvCat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:text="Categories"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvCat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCat"
-                    app:layout_constraintVertical_bias="1.0"
-                    tools:listitem="@layout/category_card" />
-
-                <TextView
-                    android:id="@+id/tvAll"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:text="View All"
-                    android:textColor="#448AFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvCat"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tvCat" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tvRcd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:text="Recommended"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvRcd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintStart_toStartOf="parent
-"
-                    app:layout_constraintTop_toBottomOf="@+id/tvRcd"
-                    tools:listitem="@layout/recommended_card" />
-
-                <TextView
-                    android:id="@+id/tvRecAll"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:text="View All"
-                    android:textColor="#448AFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvRcd"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tvRcd" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+            <include layout="@layout/layout_recycler"
+                android:id="@+id/layout_recommended"/>
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
