@@ -1,5 +1,6 @@
 package com.example.kotlin_ui_android_app.adapter
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.example.kotlin_ui_android_app.model.Category
 
 
 class CategoryAdapter(
+
     private val categoryList: List<Category>,
 ) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {

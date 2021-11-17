@@ -19,10 +19,9 @@ class MainActivity : AppCompatActivity() {
     private val binding get() = _binding
     private lateinit var categoryList: List<Category>
     private lateinit var itemList: List<ItemModel>
-    private lateinit var categoryAdapter: CategoryAdapter
-    private lateinit var courseAdapter: CourseAdapter
+    private lateinit var itemRecyclerAdapter: ItemRecyclerAdapter
     private lateinit var courseList: List<Course>
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var itemRecyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,28 +35,24 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun setAdapter() {
-        loadCourse()
-        loadCategory()
+        loadItem()
         initAdapter()
+
     }
 
     private fun initAdapter() {
-        categoryAdapter = CategoryAdapter(categoryList)
-        binding?.layoutCategory?.rvItem?.adapter = categoryAdapter
-        binding?.layoutCategory?.tvItemTitle?.text = resources.getString(R.string.categories)
-        courseAdapter = CourseAdapter( courseList)
-        binding?.layoutRecommended?.rvItem?.adapter = courseAdapter
-        binding?.layoutRecommended?.tvItemTitle?.text = resources.getString(R.string.recommended)
-
+        itemRecyclerView = findViewById(R.id.Parent_recyclerView)
+        itemRecyclerAdapter = ItemRecyclerAdapter(itemList)
+        binding?.layoutCategory?.ParentRecyclerView?.adapter = itemRecyclerAdapter
 
     }
 
-//    private fun loadItem() {
-//        itemList = listOf(
-//            ItemModel("Category"), ItemModel("Recommended")
-//
-//        )
-//    }
+    private fun loadItem() {
+        itemList = listOf(
+            ItemModel("Categories"), ItemModel("Recommended")
+
+        )
+    }
 
 
     private fun loadCategory() {

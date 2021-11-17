@@ -168,11 +168,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <include layout="@layout/layout_recycler"
+            <include layout="@layout/layout_recycler_parent"
                 android:id="@+id/layoutCategory"/>
 
-            <include layout="@layout/layout_recycler"
-                android:id="@+id/layoutRecommended"/>
+
 
 
 
