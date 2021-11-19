@@ -168,16 +168,9 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <include layout="@layout/layout_recycler_parent"
-                android:id="@+id/layoutCategory"/>
-
-
-
-
-
-
-
-
+            <include
+                android:id="@+id/layoutCategory"
+                layout="@layout/layout_recycler_parent" />
 
 
             <Space
